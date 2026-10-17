@@ -3,21 +3,21 @@ class Animal:
         self.name = name
 
 class Dog(Animal):
-    def __init__(self, age=2, height=30, name="Пудж"):
+    def __init__(self, age=2, height=30, name="Пюдж"):
+        super().__init__(name)
         self.age = age
         self.height = height
-        self.name = name
-        print('Пудж гавкает')
+        print('Пюдж гавкает')
     def grow(self):
         self.age += 1
         self.height += 5
     def __str__(self):
         return f"{self.name}: {self.age} років, рост {self.height} "
 class Cat(Animal):
-    def __init__(self,age=1, height=10, name='Фамас'):
+    def __init__(self, age=1, height=10, name='Фамас'):
+        super().__init__(name)
         self.age = age
         self.height = height
-        self.name = name
         print('Фамас бегает и мяукает')
     def grow(self):
         self.age += 1
@@ -27,11 +27,11 @@ class Cat(Animal):
 cat = Cat()
 dog = Dog()
 while True:
-    x=input("Натисніть ентер щоб собака так кіт росли")
+    x = input("Натисніть ентер щоб собака так кіт росли")
     dog.grow()
     cat.grow()
     print(dog)
     print(cat)
-    if x=="q":
+    if x == "q":
         print("Deleting...")
         break
